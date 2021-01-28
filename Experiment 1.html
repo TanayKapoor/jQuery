@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experiment 1</title>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+  </head>
+  <style>
+    h1,
+    body {
+      text-align: center;
+    }
+  </style>
+  <body>
+    <!-- Create HTML Document an write a jQuery code to collect text enclosed within all div tags (3 div tags with text and one empty div tag) then set the collected text data into empty div tag 
+      having ID = demo without using any variable the above set action should be performed when  the user clicked button on the document after setting text to empty div tag change its style 
+      just like other div tags and in addition to that add color which should be red.  -->
+    <h1>Experiment 1</h1>
+    <div style="border: 1px solid; width: 200px">This is first div</div>
+    <div style="border: 1px solid; width: 200px">This is second div</div>
+    <div style="border: 1px solid; width: 200px">This is third div</div>
+    <div id="demo"></div>
+    <button id="action">Click here to add more div</button>
+  </body>
+  <script>
+    $("document").ready(function () {
+      $("#action").click(function () {
+        $("#demo").text($("div").text());
+        $("#demo").css({
+          border: "1px solid",
+          width: "200px",
+          color: "red",
+        });
+      });
+    });
+  </script>
+</html>
