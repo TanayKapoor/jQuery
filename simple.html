@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple</title>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
   </head>
   <body>
     <p id="first">This is a paragraph! 1</p>
     <p class="Second">This is a paragraph! 2</p>
     <p>This is a paragraph! 3</p>
   </body>
-  <script src="./node_modules/jquery/dist/jquery.min.js"></script>
   <script>
     $("document").ready(function () {
       console.log("Script startted");
@@ -20,8 +20,8 @@
         $(this).hide();
         console.log("Hided", this);
       });
-      $("#first").click();
-      $(".Second").click();
+      // $("#first").click();
+      // $(".Second").click();
     });
   </script>
 </html>

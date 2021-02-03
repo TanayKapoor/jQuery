@@ -12,5 +12,20 @@
     jQuery alteration on wrapper set. First hyper link should be associated with page1.html second with page2.html thrid 
     with page3.html the above said action should be perfomed when dom is ready. Store the values of HREF to array and then 
     use it hyper text of all links should also be stored to another array -->
+    <a href="page1.html">PAGE 1</a></br>
+    <a href="page2.html">PAGE 2</a></br>
+    <a href="page3.html">PAGE 3</a></br>
   </body>
+
+  <script>
+    $(document).ready(function () {
+      $("a").each(function (index, value) {
+        var pagenum = parseInt(index + 1);
+        var link = "page" + pagenum + ".html";
+        $(this)
+          .text("page" + pagenum)
+          .attr("href", link);
+      });
+    });
+  </script>
 </html>
