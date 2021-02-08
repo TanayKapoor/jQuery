@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experiment 4</title>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+  </head>
+  <style>
+    h1,
+    #name {
+      text-align: center;
+    }
+    #details {
+      border: 1px solid;
+    }
+  </style>
+  <body>
+    <div id="details">
+      <h1>Experiment 4</h1>
+      <p id="name">Name: Tanay | Roll Number: 1955991593</p>
+    </div>
+    <!-- Create HTML document using given code. Find all those span tags using jQuery that
+         are enclosed within div tag and change their text as well as set their text color 
+         to red. Finally enclose all those span tags into div tag programmatically which are 
+         not already enclosed into div tag and are direct child of body element and also set 
+         their border to green. -->
+    <br />
+    <div>
+      <span>First paragraph.</span>
+    </div>
+    <span>Second paragraph.</span>
+    <div>
+      <span>Third paragraph.</span>
+    </div>
+    <button id="action">Click to Perform Action</button>
+  </body>
+  <script>
+    $('document').ready(function () {
+      $('#action').click(function () {
+        $('div')
+          .find('span')
+          .css({
+            color: 'red',
+          })
+          .text('Content in span elements.');
+        $('body>span').wrap('<div></div').css({
+          color: 'green',
+          border: '1px solid green',
+        });
+      });
+    });
+  </script>
+</html>
