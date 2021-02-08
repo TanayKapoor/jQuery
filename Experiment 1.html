@@ -18,6 +18,7 @@
       having ID = demo without using any variable the above set action should be performed when  the user clicked button on the document after setting text to empty div tag change its style 
       just like other div tags and in addition to that add color which should be red.  -->
     <h1>Experiment 1</h1>
+    <p>Name: Tanay | Roll Number: 1955991593</p>
     <div style="border: 1px solid; width: 200px">This is first div</div>
     <div style="border: 1px solid; width: 200px">This is second div</div>
     <div style="border: 1px solid; width: 200px">This is third div</div>
@@ -25,13 +26,13 @@
     <button id="action">Click here to add more div</button>
   </body>
   <script>
-    $("document").ready(function () {
-      $("#action").click(function () {
-        $("#demo").text($("div").text());
-        $("#demo").css({
-          border: "1px solid",
-          width: "200px",
-          color: "red",
+    $('document').ready(function () {
+      $('#action').click(function () {
+        $('#demo').text($('div').text());
+        $('#demo').css({
+          border: '1px solid',
+          width: '200px',
+          color: 'red',
         });
       });
     });
