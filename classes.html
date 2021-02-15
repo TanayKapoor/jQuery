@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery practise</title>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+  </head>
+  <style>
+    .rm {
+      color: blue;
+    }
+    .rm1 {
+      color: green;
+    }
+  </style>
+
+  <body>
+    <div class="rm">
+      <p>this is first paragraph</p>
+      <p>this is first paragraph</p>
+      <p>this is first paragraph</p>
+    </div>
+    <button id="btn">click on this button</button>
+  </body>
+  <script>
+    $(document).ready(function () {
+      $('#btn').click(function () {
+        // $('p').addClass('rm');
+        $('p').toggleClass('rm1');
+        // $('div').removeClass('rm');
+      });
+    });
+  </script>
+</html>
