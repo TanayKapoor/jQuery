@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Experiment6</title>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+</head>
+<body>
+<p style="border:2px solid; width: 25%; margin-left: 25%; margin-right:25%">
+    <img style="margin-left:25%;margin-right:25%" height=80 width=80/><br>
+    <a id="image1" href="#" title="image1">Image 1</a>
+    <a id="image2" href="#" title="image2">Image 2</a>
+    <a id="image3" href="#" title="image3">Image 3</a>
+</p>
+<script>
+    $('document').ready(function(){
+        $('#image1').click(function(){
+            $('img').attr('src', './image1.jpeg')
+        });
+        $('#image2').click(function(){
+            $('img').attr('src', './image2.jpeg')
+        });
+        $('#image3').click(function(){
+            $('img').attr('src', './image3.jpeg')
+        });
+    })
+</script>
+
+</body>
+</html>
