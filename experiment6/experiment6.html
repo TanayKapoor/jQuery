@@ -5,8 +5,25 @@
     <title>Experiment6</title>
     <script src="../node_modules/jquery/dist/jquery.js"></script>
 </head>
+<style>
+    span,
+    p {
+        border: 2px solid green;
+    }
+    h1,
+    #name {
+        text-align: center;
+    }
+    #details {
+        border: 1px solid;
+    }
+</style>
 <body>
-<p style="border:2px solid; width: 25%; margin-left: 25%; margin-right:25%">
+<div id="details">
+    <h1>Experiment 6</h1>
+    <center>Name: Tanay | Roll Number: 1955991593</center>
+</div>
+<p style="border:2px solid; width:25%; margin-left:25%; margin-right:25%">
     <img style="margin-left:25%;margin-right:25%" height=80 width=80/ alt="" alt="image"><br>
     <a id="image1" href="#" title="image1">Image 1</a>
     <a id="image2" href="#" title="image2">Image 2</a>
@@ -14,7 +31,7 @@
 </p>
 <script>
     $('document').ready(function(){
-        $('#image1').click(function(){
+        $('a').click(function(){
             $('img').attr('src', './image1.jpeg')
         });
         $('#image2').click(function(){
