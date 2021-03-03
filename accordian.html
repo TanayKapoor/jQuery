@@ -1,1 +1,61 @@
-<!DOCTYPE html><html lang="en"><head>  <meta charset="UTF-8">  <title>$Title$</title></head><body>$END$</body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <h2>Accordian</h2>
+    <ul id="acc">
+      <div>Sports</div>
+      <li>
+        <p>
+          Sport pertains to any form of competitive physical activity or game
+          that aims to use, maintain or improve physical ability and skills
+          while providing enjoyment to participants and, in some cases,
+          entertainment to spectators. Sports can, through casual or organized
+          participation, improve one's physical health.
+        </p>
+      </li>
+    </ul>
+    <ul id="acc">
+      <div>Artificial Inteligence</div>
+      <li>
+        <p>
+          Artificial intelligence (AI) refers to the simulation of human
+          intelligence in machines that are programmed to think like humans and
+          mimic their actions. The term may also be applied to any machine that
+          exhibits traits associated with a human mind such as learning and
+          problem-solving.
+        </p>
+      </li>
+    </ul>
+    <ul id="acc">
+      <div>Virtual Reality</div>
+      <li>
+        <p>
+          A virtual machine (VM) mode that completely emulates all hardware
+          devices and puts demand on CPU resources from the VM server. Fill
+          virtualization requires special hardware, but most operating systems
+          are able to fun in full virtual mode. Also called full virtualization
+          mode.
+        </p>
+      </li>
+    </ul>
+  </body>
+  <script>
+    $(document).ready(function () {
+      $('#acc > li').hide();
+      $('#acc div').click(function () {
+        if (true == $(this).nextAll().is(':hidden')) {
+          $('#acc div+li').slideUp(300);
+        }
+        $(this).nextAll().slideToggle(300);
+      });
+    });
+  </script>
+</html>

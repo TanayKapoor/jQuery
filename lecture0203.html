@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecture</title>
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+  </head>
+  <body>
+    <select name="CN" multiple>
+      <option value="IND">India</option>
+      <option value="US">USA</option>
+      <option value="AUS">Australia</option>
+      <option value="ENG">England</option>
+    </select>
+  </body>
+  <script>
+    $('document').ready(function () {
+        $('select').val(['IND', 'US', ...]);
+        alert(..... .val().join());
+    });
+  </script>
+</html>
