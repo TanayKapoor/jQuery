@@ -1,0 +1,127 @@
+<!-- Build a playing card game that can be played by the two players. There should be two buttons in the game namely “Show Player 1 Cards” and “Show Player 2 Cards”. You should have a set of following cards in your folder.
+{ King, Queen and Joker }
+Treat these cards as .jpeg/.jpg/.png images. When the player 1 clicks on the “Show Player 1 Cards”, three random cards out of the above set should appear. Likewise, When the player 2 clicks on the “Show Player 2 Cards”, another three random cards out of the above set should appear. Each cards have some predefined points. 
+King = 15 Points, Queen = 10 Points, Joker = 5 Points.
+The player whose total of cards is larger will won the game.
+Clue: Use random number generator and rename images smartly -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      button {
+        height: 250px;
+        width: 350px;
+      }
+
+      .show {
+        height: min-content;
+        width: 350px;
+        font-size: small;
+      }
+
+      .reset {
+        height: min-content;
+        width: min-content;
+        font-size: small;
+      }
+    </style>
+    <title>Card Game</title>
+    <script src="jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+  </head>
+
+  <body>
+    <center>
+      <p id="cap1">TheCardGame <button class="reset">reset</button></p>
+      <p id="cap2">Player1: Player2:</p>
+      <p id="cap3"></p>
+    </center>
+    <div align="left" style="float: left; width: 50%">
+      <button class="show" id="showl">Show all cards</button>
+      <table>
+        <tr>
+          <td><button id="1"></button></td>
+        </tr>
+        <tr>
+          <td><button id="2"></button></td>
+        </tr>
+        <tr>
+          <td><button id="3"></button></td>
+        </tr>
+      </table>
+    </div>
+    <div align="right" style="float: right; width: 50%">
+      <button class="show" id="showr">Show all cards</button>
+      <table>
+        <tr>
+          <td><button id="4"></button></td>
+        </tr>
+        <tr>
+          <td><button id="5"></button></td>
+        </tr>
+        <tr>
+          <td><button id="6"></button></td>
+        </tr>
+      </table>
+    </div>
+    <script>
+      var suml = 0;
+      var sumr = 0;
+      var flag_check = 0;
+      $(".reset").click(function () {
+        location.reload(true);
+      });
+      $("#showl").click(function () {
+        $("#1,#2,#3").each(function () {
+          var x = Math.floor(Math.random() * 3) + 1;
+          if (x == 1) {
+            suml += 5;
+          }
+          if (x == 2) {
+            suml += 10;
+          }
+          if (x == 3) {
+            suml += 15;
+          }
+          $(this).html("<img src='" + x + "img.png'>");
+          $(this).attr("disabled", "disabled");
+        });
+        $(this).attr("disabled", "disabled");
+        $("#cap2").text("Player1:" + suml + "\tPlayer2:" + sumr);
+        flag_check++;
+        check();
+      });
+      $("#showr").click(function () {
+        $("#4,#5,#6").each(function () {
+          var x = Math.floor(Math.random() * 3) + 1;
+          if (x == 1) {
+            sumr += 5;
+          }
+          if (x == 2) {
+            sumr += 10;
+          }
+          if (x == 3) {
+            sumr += 15;
+          }
+          $(this).html("<img src='" + x + "img.png'>");
+          $(this).attr("disabled", "disabled");
+        });
+        $(this).attr("disabled", "disabled");
+        $("#cap2").text("Player1:" + suml + "\tPlayer2:" + sumr);
+        flag_check++;
+        check();
+      });
+      function check() {
+        if (flag_check == 2 && suml > sumr) {
+          $("#cap3").text("Player 1 WON!!!");
+        } else if (flag_check == 2 && suml < sumr) {
+          $("#cap3").text("Player 2 WON!!!");
+        } else if (flag_check == 2 && suml == sumr) {
+          $("#cap3").text("DRAW!!!");
+        }
+      }
+    </script>
+  </body>
+</html>

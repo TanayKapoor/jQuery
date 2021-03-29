@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Ready</title>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+  </head>
+  <body></body>
+  <script>
+    // Standard way
+    $(document).ready(function () {
+      alert('DOM is ready');
+    });
+    // Shortcut
+    $(function () {
+      alert('Well yeah! DOM is ready');
+    });
+    // Shortcut with fail-safe usage of $
+    $(function ($) {
+      alert('DOM is really really ready!');
+    });
+  </script>
+</html>
